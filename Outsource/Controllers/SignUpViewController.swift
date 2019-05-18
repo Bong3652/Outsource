@@ -17,9 +17,14 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var rolePicker: UIPickerView!
     
+    let roles = ["Developer", "UI Designer", "Testor"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        rolePicker.delegate = self
+        rolePicker.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -28,7 +33,14 @@ class SignUpViewController: UIViewController {
         guard let email = emailField.text, let password = passwordField.text else {
             return
         }
-        Firebase.Auth.auth().createUser(withEmail: email, password: password, completion: nil)
+        Firebase.Auth.auth().createUser(withEmail: email, password: password, completion: { (result, error) in
+            if let error = error {
+                //error could be short pass, or alway has account
+                print(error)
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        })
     }
     
     /*
@@ -41,4 +53,20 @@ class SignUpViewController: UIViewController {
     }
     */
 
+}
+
+extension SignUpViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.roles.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return roles[row]
+    }
+    
 }
