@@ -1,30 +1,31 @@
 //
-//  ProfileViewController.swift
+//  SettingsViewController.swift
 //  Outsource
 //
-//  Created by APPLE on 5/18/19.
+//  Created by APPLE on 5/20/19.
 //  Copyright © 2019 Bong. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class ProfileViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var profileNameLabel: UILabel!
-    @IBOutlet weak var collaborationCounts: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var roleLabel: UILabel!
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var rolePicker: UIPickerView!
+    
+    let user = Firebase.Auth.auth().currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let user = Firebase.Auth.auth().currentUser
     }
     
-    @IBAction func didTapProfileImage(_ sender: UITapGestureRecognizer) {
+    @IBAction func didSubmit(_ sender: UIButton) {
+        let changeRequest = user?.createProfileChangeRequest()
+        changeRequest?.displayName = usernameField.text
     }
     
     /*

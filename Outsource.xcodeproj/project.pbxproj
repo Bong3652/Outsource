@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18BF295322930175005E4D87 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF295222930175005E4D87 /* SettingsViewController.swift */; };
+		18BF2957229301AB005E4D87 /* JobRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF2956229301AB005E4D87 /* JobRequest.swift */; };
 		18D1D66722909D5F00D71BFE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18D1D66622909D5F00D71BFE /* GoogleService-Info.plist */; };
 		18D6E5D8229072BD009710C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E5D7229072BD009710C0 /* AppDelegate.swift */; };
 		18D6E5DA229072BD009710C0 /* AuthoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6E5D9229072BD009710C0 /* AuthoViewController.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		03B8EFD9A6C9F736D63D253C /* Pods-Outsource.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Outsource.debug.xcconfig"; path = "Target Support Files/Pods-Outsource/Pods-Outsource.debug.xcconfig"; sourceTree = "<group>"; };
+		18BF295222930175005E4D87 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		18BF2956229301AB005E4D87 /* JobRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRequest.swift; sourceTree = "<group>"; };
 		18CFE95A898810F1A98C5419 /* Pods_Outsource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Outsource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D1D66622909D5F00D71BFE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18D6E5D4229072BD009710C0 /* Outsource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Outsource.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18BF2958229301B4005E4D87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18BF2956229301AB005E4D87 /* JobRequest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		18D6E5CB229072BD009710C0 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				18D6E5D7229072BD009710C0 /* AppDelegate.swift */,
+				18BF2958229301B4005E4D87 /* Model */,
 				18D6E5F12290748F009710C0 /* Controllers */,
 				18D6E5E922907313009710C0 /* Main.storyboard */,
 				18D6E5EB2290742E009710C0 /* Assets.xcassets */,
@@ -84,6 +97,7 @@
 				18D6E5EF22907468009710C0 /* ProfileViewController.swift */,
 				18D6E5D9229072BD009710C0 /* AuthoViewController.swift */,
 				18D6E5ED22907453009710C0 /* SignUpViewController.swift */,
+				18BF295222930175005E4D87 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,8 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D6E5EE22907453009710C0 /* SignUpViewController.swift in Sources */,
+				18BF2957229301AB005E4D87 /* JobRequest.swift in Sources */,
 				18D6E5DA229072BD009710C0 /* AuthoViewController.swift in Sources */,
 				18D6E5F022907468009710C0 /* ProfileViewController.swift in Sources */,
+				18BF295322930175005E4D87 /* SettingsViewController.swift in Sources */,
 				18D6E5D8229072BD009710C0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
