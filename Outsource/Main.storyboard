@@ -73,7 +73,6 @@
                                 <state key="normal" title="LOGIN"/>
                                 <connections>
                                     <action selector="didLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CfV-DJ-iv7"/>
-                                    <segue destination="1xj-Vt-8Rq" kind="presentation" identifier="LoginSegue" id="Azd-Pc-EaM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -86,6 +85,7 @@
                         <outlet property="graidentBG" destination="jpt-1K-9m8" id="Q0c-k1-WsL"/>
                         <outlet property="loginButton" destination="ndO-Fr-kEq" id="CXv-gV-bub"/>
                         <outlet property="passwordField" destination="iie-Ga-R2C" id="dpE-X2-uFw"/>
+                        <segue destination="1xj-Vt-8Rq" kind="presentation" identifier="LoginSegue" id="jKW-l2-a17"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -193,7 +193,7 @@
             </objects>
             <point key="canvasLocation" x="-281" y="860"/>
         </scene>
-        <!--Post-->
+        <!--Make Request-->
         <scene sceneID="8xz-rB-NMk">
             <objects>
                 <viewController id="nEh-Q8-6if" sceneMemberID="viewController">
@@ -257,7 +257,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ySr-wY-mFE"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Post" id="4SV-Xd-ezo"/>
+                    <tabBarItem key="tabBarItem" title="Make Request" id="4SV-Xd-ezo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJy-fy-aVj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -377,13 +377,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PbN-Fd-mlW"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="04I-7G-HYh"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Profile" id="DhQ-jh-Zzw">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="i9g-I8-gd3">
+                            <connections>
+                                <action selector="didLogout:" destination="woP-bj-KEl" id="JNo-4j-Yik"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="T8v-8r-siV">
                             <connections>
                                 <segue destination="KTX-PQ-umi" kind="show" id="jvg-JP-87O"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collaborationCounts" destination="AmI-Eo-SQg" id="U4Q-Ih-tNe"/>
                         <outlet property="profileImage" destination="lVG-Ju-Vri" id="4Hl-uP-Ru8"/>

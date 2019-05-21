@@ -94,8 +94,8 @@
 		18D6E5F12290748F009710C0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				18D6E5EF22907468009710C0 /* ProfileViewController.swift */,
 				18D6E5D9229072BD009710C0 /* AuthoViewController.swift */,
+				18D6E5EF22907468009710C0 /* ProfileViewController.swift */,
 				18D6E5ED22907453009710C0 /* SignUpViewController.swift */,
 				18BF295222930175005E4D87 /* SettingsViewController.swift */,
 			);

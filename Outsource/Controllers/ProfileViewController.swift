@@ -17,6 +17,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var roleLabel: UILabel!
     
+    let user = Firebase.Auth.auth().currentUser
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,31 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func didTapProfileImage(_ sender: UITapGestureRecognizer) {
+        
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
+        }
+        
+        present(picker, animated: true, completion: nil)
+        
+        let changeRequest = user?.createProfileChangeRequest()
+        //changeRequest?.photoURL
+    }
+    
+    @IBAction func didLogout(_ sender: UIBarButtonItem) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            present(AuthoViewController(), animated: true, completion: nil)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
     
     /*
@@ -37,4 +64,17 @@ class ProfileViewController: UIViewController {
     }
     */
 
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        let image = info[.editedImage] as! UIImage
+//        let size = CGSize(width: 300, height: 300)
+//        let scaledImage = image.af_imageAspectScaled(toFill: size)
+//
+//        photoView.image = scaledImage
+//        dismiss(animated: true, completion: nil)
+    }
+    
 }
