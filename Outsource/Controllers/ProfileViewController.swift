@@ -18,12 +18,39 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var roleLabel: UILabel!
     
     let user = Firebase.Auth.auth().currentUser
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let user = Firebase.Auth.auth().currentUser
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+         setupProfile()
+    }
+    
+    func setupProfile() {
+        
+        guard let uid = user?.uid else {
+            return
+        }
+        
+        db.collection("users").document(uid).getDocument { (snap, error) in
+            if let snapshot = snap {
+                let dictionary = snapshot.data()!
+                let currentUser = User(dictionary: dictionary)
+                print(dictionary)
+                print(currentUser)
+//                self.profileNameLabel.text = dictionary["username"] as! String
+//                self.collaborationCounts.text = dictionary["collabs"] as! String
+//                self.ratingLabel.text = dictionary["rating"] as! String
+//                self.roleLabel.text = dictionary["role"] as! String
+            } else {
+                print(error)
+            }
+        }
     }
     
     @IBAction func didTapProfileImage(_ sender: UITapGestureRecognizer) {
@@ -40,18 +67,48 @@ class ProfileViewController: UIViewController {
         
         present(picker, animated: true, completion: nil)
         
-        let changeRequest = user?.createProfileChangeRequest()
-        //changeRequest?.photoURL
+        guard let data = profileImage.image?.pngData() else { return }
+        
+        changeImage(pngData: data)
+        
     }
     
     @IBAction func didLogout(_ sender: UIBarButtonItem) {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
-            present(AuthoViewController(), animated: true, completion: nil)
+            
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let AuthoVC = main.instantiateViewController(withIdentifier: "AuthoViewController")
+            
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            delegate.window?.rootViewController = AuthoVC
+            
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+    }
+    
+    func changeImage(pngData: Data) {
+        
+        guard let uid = user?.uid else {
+            return
+        }
+        
+        let document = db.collection("users").document(uid)
+        let id = document.documentID
+
+        let storage = Storage.storage().reference(withPath: "users/\(uid)/\(id).png")
+        let metadata = StorageMetadata()
+
+        metadata.contentType = "image/png"
+        
+        storage.putData(pngData, metadata: metadata) { (result, error) in
+            if error != nil {
+                print(error)
+            }
+        }
+        
     }
     
     /*

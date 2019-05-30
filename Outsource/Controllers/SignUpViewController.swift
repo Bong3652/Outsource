@@ -18,6 +18,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var rolePicker: UIPickerView!
     
     let roles = ["Developer", "UI Designer", "Testor"]
+    lazy var selectedRole = roles[0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func didSignUp(_ sender: UIButton) {
-        //let db = Firestore.firestore()
+        let db = Firestore.firestore()
         guard let email = emailField.text, let password = passwordField.text else {
             return
         }
@@ -38,6 +39,26 @@ class SignUpViewController: UIViewController {
                 //error could be short pass, or alway has account
                 print(error)
             } else {
+                
+                Firebase.Auth.auth().signIn(withEmail: email, password: password, completion: nil)
+                
+                guard let uid = Firebase.Auth.auth().currentUser?.uid, let email = Firebase.Auth.auth().currentUser?.email else {
+                    return
+                }
+                
+                guard let username = self.usernameField.text else { return }
+                
+                let data : [String : Any] = [
+                    "uid" : uid,
+                    "email" : email,
+                    "username" : username,
+                    "role" : self.selectedRole,
+                    "rating" : 0.0,
+                    "collabs" : 0
+                ]
+                
+                db.collection("users").document(uid).setData(data)
+
                 self.dismiss(animated: true, completion: nil)
             }
         })
@@ -67,6 +88,10 @@ extension SignUpViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return roles[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.selectedRole = roles[row]
     }
     
 }
