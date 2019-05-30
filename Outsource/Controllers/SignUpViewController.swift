@@ -53,7 +53,7 @@ class SignUpViewController: UIViewController {
                     "email" : email,
                     "username" : username,
                     "role" : self.selectedRole,
-                    "rating" : 0.0,
+                    "rating" : "5.0",
                     "collabs" : 0
                 ]
                 

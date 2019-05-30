@@ -37,16 +37,24 @@ class ProfileViewController: UIViewController {
             return
         }
         
+//        let docRef = db.collection("users").document(uid)
+//
+//        docRef.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                print("Document data: \(dataDescription)")
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
+        
         db.collection("users").document(uid).getDocument { (snap, error) in
             if let snapshot = snap {
-                let dictionary = snapshot.data()!
-                let currentUser = User(dictionary: dictionary)
-                print(dictionary)
-                print(currentUser)
-//                self.profileNameLabel.text = dictionary["username"] as! String
-//                self.collaborationCounts.text = dictionary["collabs"] as! String
-//                self.ratingLabel.text = dictionary["rating"] as! String
-//                self.roleLabel.text = dictionary["role"] as! String
+                guard let username = snapshot.data()?["username"] as? String, let collabs = snapshot.data()?["collabs"] as? Int, let rating = snapshot.data()?["rating"] as? String, let role = snapshot.data()?["role"] as? String else { return }
+                self.profileNameLabel.text = username
+                self.collaborationCounts.text = "\(collabs)"
+                self.ratingLabel.text = rating
+                self.roleLabel.text = role
             } else {
                 print(error)
             }
