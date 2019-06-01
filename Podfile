@@ -10,5 +10,6 @@ target 'Outsource' do
     pod 'Firebase/Core'
     pod 'Firebase/Firestore'
     pod 'Firebase/Storage'
+    pod 'AlamofireImage'
 
 end

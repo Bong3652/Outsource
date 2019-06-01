@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import AlamofireImage
 
 class ProfileViewController: UIViewController {
 
@@ -75,10 +76,6 @@ class ProfileViewController: UIViewController {
         
         present(picker, animated: true, completion: nil)
         
-        guard let data = profileImage.image?.pngData() else { return }
-        
-        changeImage(pngData: data)
-        
     }
     
     @IBAction func didLogout(_ sender: UIBarButtonItem) {
@@ -134,12 +131,20 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        let image = info[.editedImage] as! UIImage
-//        let size = CGSize(width: 300, height: 300)
-//        let scaledImage = image.af_imageAspectScaled(toFill: size)
-//
-//        photoView.image = scaledImage
-//        dismiss(animated: true, completion: nil)
+        let image = info[.editedImage] as! UIImage
+        let size = CGSize(width: 300, height: 300)
+        let scaledImage = image.af_imageAspectScaled(toFill: size)
+
+        profileImage.image = scaledImage
+        
+        guard let data = profileImage.image?.pngData() else {
+            print("failed photo")
+            return
+        }
+        
+        changeImage(pngData: data)
+        
+        dismiss(animated: true, completion: nil)
     }
     
 }
