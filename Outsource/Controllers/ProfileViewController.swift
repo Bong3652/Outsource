@@ -38,17 +38,6 @@ class ProfileViewController: UIViewController {
             return
         }
         
-//        let docRef = db.collection("users").document(uid)
-//
-//        docRef.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-//                print("Document data: \(dataDescription)")
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
-        
         db.collection("users").document(uid).getDocument { (snap, error) in
             if let snapshot = snap {
                 guard let username = snapshot.data()?["username"] as? String, let collabs = snapshot.data()?["collabs"] as? Int, let rating = snapshot.data()?["rating"] as? String, let role = snapshot.data()?["role"] as? String else { return }
@@ -56,10 +45,22 @@ class ProfileViewController: UIViewController {
                 self.collaborationCounts.text = "\(collabs)"
                 self.ratingLabel.text = rating
                 self.roleLabel.text = role
+                Storage.storage().reference(withPath: "users/\(uid)/\(snapshot.documentID).png").getData(maxSize: .max) { (data, error) in
+                    if error != nil {
+                        print(error ?? "error unknown")
+                    } else {
+                        let image = UIImage(data: data!)
+                        self.profileImage.image = image
+                    }
+                }
             } else {
                 print(error)
             }
         }
+        
+//        Storage.storage().reference(withPath: "users/\(Auth.auth().currentUser!.uid)/\(post.id).png").getData(maxSize: .max, completion: { (data, error) in
+//            handler(data, error)
+//        })
     }
     
     @IBAction func didTapProfileImage(_ sender: UITapGestureRecognizer) {
