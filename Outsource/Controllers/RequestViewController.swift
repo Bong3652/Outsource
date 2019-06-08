@@ -10,10 +10,12 @@ import UIKit
 
 class RequestViewController: UIViewController {
     
+    //enums in future
     let roles = ["Developer", "UI Designer", "Testor"]
     lazy var selectedRole = roles[0]
 
     @IBOutlet weak var rolePicker: UIPickerView!
+    @IBOutlet weak var requestButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,10 @@ class RequestViewController: UIViewController {
         rolePicker.dataSource = self
     }
     
-
+    @IBAction func didRequest(_ sender: UIButton) {
+        //let jobRequest = JobRequest(requestID: <#T##String#>, lookingFor: <#T##String#>, description: <#T##String#>, user: <#T##User#>, createdDate: <#T##Date#>, available: <#T##Bool#>)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18219A2E229CA81F00ED000E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18219A2D229CA81F00ED000E /* User.swift */; };
+		18219A2E229CA81F00ED000E /* CustomUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18219A2D229CA81F00ED000E /* CustomUser.swift */; };
 		18ACC16222A59B6E008D9DD2 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACC16122A59B6E008D9DD2 /* RequestViewController.swift */; };
 		18BF295322930175005E4D87 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF295222930175005E4D87 /* SettingsViewController.swift */; };
 		18BF2957229301AB005E4D87 /* JobRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF2956229301AB005E4D87 /* JobRequest.swift */; };
@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		03B8EFD9A6C9F736D63D253C /* Pods-Outsource.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Outsource.debug.xcconfig"; path = "Target Support Files/Pods-Outsource/Pods-Outsource.debug.xcconfig"; sourceTree = "<group>"; };
-		18219A2D229CA81F00ED000E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		18219A2D229CA81F00ED000E /* CustomUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUser.swift; sourceTree = "<group>"; };
 		18ACC16122A59B6E008D9DD2 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		18BF295222930175005E4D87 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		18BF2956229301AB005E4D87 /* JobRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRequest.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 			children = (
 				18BF2956229301AB005E4D87 /* JobRequest.swift */,
 				18FFB4D6229887FB00C59243 /* RequestCell.swift */,
-				18219A2D229CA81F00ED000E /* User.swift */,
+				18219A2D229CA81F00ED000E /* CustomUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,7 +248,7 @@
 				18FFB4D7229887FB00C59243 /* RequestCell.swift in Sources */,
 				18BF2957229301AB005E4D87 /* JobRequest.swift in Sources */,
 				18D6E5DA229072BD009710C0 /* AuthoViewController.swift in Sources */,
-				18219A2E229CA81F00ED000E /* User.swift in Sources */,
+				18219A2E229CA81F00ED000E /* CustomUser.swift in Sources */,
 				18ACC16222A59B6E008D9DD2 /* RequestViewController.swift in Sources */,
 				18D6E5F022907468009710C0 /* ProfileViewController.swift in Sources */,
 				18BF295322930175005E4D87 /* SettingsViewController.swift in Sources */,

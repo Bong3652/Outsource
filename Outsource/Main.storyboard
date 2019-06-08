@@ -230,6 +230,9 @@
                                 <state key="normal" title="CREATE REQUEST">
                                     <color key="titleColor" red="0.086932291580000001" green="0.34610830770000001" blue="0.64928756480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="didRequest:" destination="nEh-Q8-6if" eventType="touchUpInside" id="oY2-1D-hSW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looking For A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TU3-Si-iRr">
                                 <rect key="frame" x="24" y="223" width="366" height="21"/>
@@ -278,6 +281,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Make Request" id="4SV-Xd-ezo"/>
                     <connections>
+                        <outlet property="requestButton" destination="YGn-7f-0CN" id="X39-2U-4Vr"/>
                         <outlet property="rolePicker" destination="bDq-4L-euA" id="7KD-sV-vv1"/>
                     </connections>
                 </viewController>
