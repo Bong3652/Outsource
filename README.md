@@ -7,7 +7,7 @@ Ever find yourself in a situation where your UI looks like shit? Ever find yours
 - [x] User can signup.
 - [x] User can see their profile.
 - [ ] User can see other user's profiles.
-- [ ] User can post a job request.
+- [x] User can post a job request.
 - [ ] User can see the their feed.
 
 #### BONUS
