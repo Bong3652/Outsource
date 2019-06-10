@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct User {
+struct CustomUser {
     var collab: Int
     var email: String
-    var rating: Double
+    var rating: String
     var role: String
     var uid: String
     var username: String
     
     init(dictionary: [String: Any]) {
         self.email = dictionary["email"] as! String
-        self.collab = dictionary["collab"] as! Int
-        self.rating = dictionary["rating"] as! Double
+        self.collab = dictionary["collabs"] as! Int
+        self.rating = dictionary["rating"] as! String
         self.role = dictionary["role"] as! String
         self.uid = dictionary["uid"] as! String
         self.username = dictionary["username"] as! String

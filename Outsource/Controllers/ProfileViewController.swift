@@ -40,6 +40,10 @@ class ProfileViewController: UIViewController {
         
         db.collection("users").document(uid).getDocument { (snap, error) in
             if let snapshot = snap {
+                
+                let user = CustomUser(dictionary: snapshot.data()!)
+                print(user)
+                
                 guard let username = snapshot.data()?["username"] as? String, let collabs = snapshot.data()?["collabs"] as? Int, let rating = snapshot.data()?["rating"] as? String, let role = snapshot.data()?["role"] as? String else { return }
                 self.profileNameLabel.text = username
                 self.collaborationCounts.text = "\(collabs)"
@@ -58,9 +62,6 @@ class ProfileViewController: UIViewController {
             }
         }
         
-//        Storage.storage().reference(withPath: "users/\(Auth.auth().currentUser!.uid)/\(post.id).png").getData(maxSize: .max, completion: { (data, error) in
-//            handler(data, error)
-//        })
     }
     
     @IBAction func didTapProfileImage(_ sender: UITapGestureRecognizer) {
