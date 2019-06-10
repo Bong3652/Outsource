@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RequestViewController: UIViewController {
     
@@ -17,6 +18,8 @@ class RequestViewController: UIViewController {
     @IBOutlet weak var rolePicker: UIPickerView!
     @IBOutlet weak var requestButton: UIButton!
     
+    @IBOutlet weak var descriptionField: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +29,44 @@ class RequestViewController: UIViewController {
     }
     
     @IBAction func didRequest(_ sender: UIButton) {
-        //let jobRequest = JobRequest(requestID: <#T##String#>, lookingFor: <#T##String#>, description: <#T##String#>, user: <#T##User#>, createdDate: <#T##Date#>, available: <#T##Bool#>)
+        
+        let db = Firestore.firestore()
+        guard let user = Firebase.Auth.auth().currentUser else {
+            return
+        }
+        
+        let preData : [String : Any] = [
+            "requestID" : " ",
+            "lookingFor" : " ",
+            "description" : " ",
+            "requestor" : " ",
+            "requestorID" : " ",
+            "available" : true
+        ]
+        
+        let docRef = db.collection("requests").addDocument(data: preData)
+        
+        let data : [String : Any] = [
+            "requestID" : docRef.documentID,
+            "lookingFor" : self.selectedRole,
+            "description" : self.descriptionField.text,
+            "requestor" : user.displayName,
+            "requestorID" : user.uid,
+            "available" : true
+        ]
+        db.collection("requests").document(docRef.documentID).setData(data) { (error) in
+            if error != nil {
+                print(error)
+            } else {
+                self.resetFields()
+            }
+        }
+
+    }
+    
+    func resetFields() {
+        selectedRole = roles[0]
+        self.descriptionField.text = ""
     }
     
     /*

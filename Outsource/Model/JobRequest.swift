@@ -16,17 +16,15 @@ class JobRequest {
     var description: String
     var requestor: String
     var requestorID: String
-    var createdDate: Date
     var available: Bool
     
-    init(requestID: String, lookingFor: String, description: String, user: User, createdDate: Date, available: Bool ) {
+    init(requestID: String, lookingFor: String, description: String, requestor: String, requestorID: String, available: Bool ) {
         
         self.requestID = requestID
         self.lookingFor = lookingFor
         self.description = description
-        self.requestor = user.displayName ?? "anonymous"
-        self.requestorID = user.uid
-        self.createdDate = createdDate
+        self.requestor = requestor
+        self.requestorID = requestorID
         self.available = available
         
     }

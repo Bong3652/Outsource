@@ -59,6 +59,16 @@ class SignUpViewController: UIViewController {
                 
                 db.collection("users").document(uid).setData(data)
 
+                Firebase.Auth.auth().currentUser?.createProfileChangeRequest().displayName = username
+                
+                Firebase.Auth.auth().signOut().then(function() {
+                    // Sign-out successful.
+                    print("sign out success")
+                }).catch(function(error) {
+                    // An error happened.
+                    print(error)
+                });
+                
                 self.dismiss(animated: true, completion: nil)
             }
         })

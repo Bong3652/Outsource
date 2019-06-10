@@ -250,9 +250,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Job Description goes here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eKx-5b-Cm8">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eKx-5b-Cm8">
                                 <rect key="frame" x="8" y="513" width="398" height="230"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -281,6 +281,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Make Request" id="4SV-Xd-ezo"/>
                     <connections>
+                        <outlet property="descriptionField" destination="eKx-5b-Cm8" id="gsI-gr-FnH"/>
                         <outlet property="requestButton" destination="YGn-7f-0CN" id="X39-2U-4Vr"/>
                         <outlet property="rolePicker" destination="bDq-4L-euA" id="7KD-sV-vv1"/>
                     </connections>
