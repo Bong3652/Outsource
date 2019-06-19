@@ -1,5 +1,5 @@
 # Outsource
-Ever find yourself in a situation where your UI looks like shit? Ever find yourself in a situation where you need to test your app but you yourself is too lazy too? Outsource solves this problem by pushing the problem to someone else. Outsource is an app that helps developers finish their app by allows users to post job request.
+Ever find yourself in a situation where your UI looks hideous? Ever find yourself in a situation where you need to test your app but you yourself is too lazy too? Outsource solves this problem by pushing the problem to someone else. Outsource is an app that helps developers finish their app by allows users to post job request.
 
 ### User Stories
 
