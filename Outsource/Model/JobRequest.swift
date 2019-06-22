@@ -29,5 +29,14 @@ class JobRequest {
         
     }
     
+    init(dictionary: [String : Any]) {
+        self.requestID = dictionary["requestID"] as! String
+        self.lookingFor = dictionary["lookingFor"] as! String
+        self.description = dictionary["description"] as! String
+        self.requestor = dictionary["requestor"] as? String ?? "Unknown"
+        self.requestorID = dictionary["requestorID"] as! String
+        self.available = dictionary["available"] as! Bool
+    }
+
 }
 

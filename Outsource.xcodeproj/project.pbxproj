@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1809A77922BBEEF20097FB14 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809A77822BBEEF20097FB14 /* FeedViewController.swift */; };
 		18219A2E229CA81F00ED000E /* CustomUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18219A2D229CA81F00ED000E /* CustomUser.swift */; };
 		18ACC16222A59B6E008D9DD2 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACC16122A59B6E008D9DD2 /* RequestViewController.swift */; };
 		18BF295322930175005E4D87 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF295222930175005E4D87 /* SettingsViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		03B8EFD9A6C9F736D63D253C /* Pods-Outsource.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Outsource.debug.xcconfig"; path = "Target Support Files/Pods-Outsource/Pods-Outsource.debug.xcconfig"; sourceTree = "<group>"; };
+		1809A77822BBEEF20097FB14 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		18219A2D229CA81F00ED000E /* CustomUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUser.swift; sourceTree = "<group>"; };
 		18ACC16122A59B6E008D9DD2 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		18BF295222930175005E4D87 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				18D6E5ED22907453009710C0 /* SignUpViewController.swift */,
 				18BF295222930175005E4D87 /* SettingsViewController.swift */,
 				18ACC16122A59B6E008D9DD2 /* RequestViewController.swift */,
+				1809A77822BBEEF20097FB14 /* FeedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			files = (
 				18D6E5EE22907453009710C0 /* SignUpViewController.swift in Sources */,
 				18FFB4D7229887FB00C59243 /* RequestCell.swift in Sources */,
+				1809A77922BBEEF20097FB14 /* FeedViewController.swift in Sources */,
 				18BF2957229301AB005E4D87 /* JobRequest.swift in Sources */,
 				18D6E5DA229072BD009710C0 /* AuthoViewController.swift in Sources */,
 				18219A2E229CA81F00ED000E /* CustomUser.swift in Sources */,

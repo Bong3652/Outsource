@@ -555,7 +555,7 @@
         <!--Feed-->
         <scene sceneID="mYB-8I-ee5">
             <objects>
-                <viewController id="Ucq-jH-nph" sceneMemberID="viewController">
+                <viewController id="Ucq-jH-nph" customClass="FeedViewController" customModule="Outsource" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eda-dP-q0F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -579,7 +579,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xr2-lv-O1n">
                                                     <rect key="frame" x="8" y="8" width="398" height="298.5"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4pK-XJ-DcB">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="4pK-XJ-DcB">
                                                             <rect key="frame" x="8" y="8" width="60" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="bqf-dH-pqs"/>
@@ -696,6 +696,9 @@
                         <viewLayoutGuide key="safeArea" id="9tx-ZN-CnT"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" id="itm-11-t6a"/>
+                    <connections>
+                        <outlet property="feedTable" destination="yj9-9g-dfU" id="ibd-sa-Bdm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U2z-Rn-ARc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
