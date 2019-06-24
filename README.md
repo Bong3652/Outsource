@@ -3,12 +3,12 @@ Ever find yourself in a situation where your UI looks hideous? Ever find yoursel
 
 ### User Stories
 
-#### REQUIRED (10pts)
+#### REQUIRED
 - [x] User can signup.
 - [x] User can see their profile.
-- [ ] User can see other user's profiles.
+- [x] User can see other user's profiles.
 - [x] User can post a job request.
-- [ ] User can see the their feed.
+- [x] User can see the their feed.
 
 #### BONUS
 - [ ] User can write a review about other users.
