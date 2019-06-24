@@ -16,7 +16,7 @@ Ever find yourself in a situation where your UI looks hideous? Ever find yoursel
 
 ### App Walkthough GIF
 
-//<img src="./FlixDemo2.1.gif" width=250><br>
+//<img src="./OutsourcePreview.gif" width=250><br>
 
 ### Notes
 This app was made by Yong Kai Dong in the summer of 2019 as a way of pasting time.
